@@ -1,0 +1,38 @@
+@base = https://localhost:7043
+
+### Listar
+GET {{base}}/api/users
+
+### Buscar
+GET {{base}}/api/users?q=ana
+
+### Crear
+POST {{base}}/api/users
+Content-Type: application/json
+
+{
+  "firstName": "María",
+  "lastName": "García",
+  "email": "maria.garcia@techhive.local",
+  "department": "Operaciones",
+  "isActive": true
+}
+
+### Obtener por ID
+@id = REEMPLAZA-CON-GUID
+GET {{base}}/api/users/{{id}}
+
+### Actualizar
+PUT {{base}}/api/users/{{id}}
+Content-Type: application/json
+
+{
+  "firstName": "María",
+  "lastName": "García López",
+  "email": "maria.garcia@techhive.local",
+  "department": "Operaciones",
+  "isActive": false
+}
+
+### Eliminar
+DELETE {{base}}/api/users/{{id}}
